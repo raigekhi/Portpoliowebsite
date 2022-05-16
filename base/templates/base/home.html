@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="{% static 'styles/main.css' %}"
+    />
+    <title>Kenneth Dalabajan</title>
+  </head>
+  <body>
+    <section class="navigation-bar">
+      <a class="nav-link" href="#"> Projects </a>
+
+      <a class="nav-link" href="#"> Courses </a>
+
+      <a class="nav-link" href="#"> Contact </a>
+    </section>
+
+    <section class="hero">
+      <div class="hero--content">
+        <div class="hero--content--intro">
+          <img id="profile_pic" src="{% static 'images/ken.jpg' %}" />
+          <h1 class="intro--name">
+            Kenneth <br />
+            Dalabajan
+          </h1>
+        </div>
+
+        <div class="hero--content--subheadline">
+          <h3 class="description">Web Developer</h3>
+          <p class="slogan">
+            An aspiring web developer learning new technologies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section--2">
+      <h3>My Projects</h3>
+      <h5>Projects that makes my journey worthwhile</h5>
+      <div class="projects--wrapper">
+        {% for project in projects %}
+        <div class="project--column">
+          <img class="project--thumbnail" src="{{project.thumbnail.url}}" />
+          <div class="project--body">
+            <h5>{{project.title}}</h5>
+          </div>
+          
+        </div> 
+        {% empty %}
+          <h3>There are no project in the database...</h3>
+        {% endfor %}
+       
+
+      </div>
+
+      <div class="about--wrapper">
+        <h3>More About Me</h3>
+
+        <p>
+          An aspiring software engineer which is passionate about web
+          development and interested in l earning languages like HTML, Python,
+          JS etc. The more time you "spend" with a language the more you
+          understand it, and "you two get along better."
+        </p>
+        <p>
+          I also love being outdoors, exploring new places and trying new
+          things!. Always looking for and interested in new
+          technologies/programming languages. Taking risks at work has been a
+          breath of fresh air.
+        </p>
+      </div>
+    </section>
+
+    <section class="section--1">
+      <div class="skills--container">
+        <h3>More About Me</h3>
+
+        <div class="skill--wrapper">
+          <h5>Python</h5>
+          <p>
+            I love programming and nearly all challenges it brings. I enjoy
+            learning anything new, teaching myself Python, C++, or whatever
+            catches my eye. Anything is possible!. I found coding to be the most
+            powerful tool in today's digital world.
+          </p>
+        </div>
+
+        <div class="skill--wrapper">
+          <h5>Django</h5>
+          <p>
+            I love programming and nearly all challenges it brings. I enjoy
+            learning anything new, teaching myself Python, C++, or whatever
+            catches my eye. Anything is possible!. I found coding to be the most
+            powerful tool in today's digital world.
+          </p>
+        </div>
+
+        <div class="skill--wrapper">
+          <h5>Javascript</h5>
+          <p>
+            I love programming and nearly all challenges it brings. I enjoy
+            learning anything new, teaching myself Python, C++, or whatever
+            catches my eye. Anything is possible!. I found coding to be the most
+            powerful tool in today's digital world.
+          </p>
+        </div>
+
+        <h4>Other Skills</h4>
+        <div class="other--skills-wrapper">
+          <div class="skill--tag">
+            <span>HTML</span>
+          </div>
+
+          <div class="skill--tag">
+            <span>Java</span>
+          </div>
+
+          <div class="skill--tag">
+            <span>CSS</span>
+          </div>
+
+          <div class="skill--tag">
+            <span>Technical Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

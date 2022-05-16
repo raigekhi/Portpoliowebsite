@@ -88,53 +88,23 @@
       <div class="skills--container">
         <h3>More About Me</h3>
 
+        {% for skill in detailedSkills %}
         <div class="skill--wrapper">
-          <h5>Python</h5>
-          <p>
-            I love programming and nearly all challenges it brings. I enjoy
-            learning anything new, teaching myself Python, C++, or whatever
-            catches my eye. Anything is possible!. I found coding to be the most
-            powerful tool in today's digital world.
-          </p>
+          <h5>{{skill.title}}</h5>
+          <p> {{skill.body}}</p>
         </div>
+        {% endfor %}
 
-        <div class="skill--wrapper">
-          <h5>Django</h5>
-          <p>
-            I love programming and nearly all challenges it brings. I enjoy
-            learning anything new, teaching myself Python, C++, or whatever
-            catches my eye. Anything is possible!. I found coding to be the most
-            powerful tool in today's digital world.
-          </p>
-        </div>
 
-        <div class="skill--wrapper">
-          <h5>Javascript</h5>
-          <p>
-            I love programming and nearly all challenges it brings. I enjoy
-            learning anything new, teaching myself Python, C++, or whatever
-            catches my eye. Anything is possible!. I found coding to be the most
-            powerful tool in today's digital world.
-          </p>
-        </div>
 
         <h4>Other Skills</h4>
         <div class="other--skills-wrapper">
+          {% for skill in skills %}
           <div class="skill--tag">
-            <span>HTML</span>
+            <span>{{skill.title}}</span>
           </div>
+          {% endfor %}
 
-          <div class="skill--tag">
-            <span>Java</span>
-          </div>
-
-          <div class="skill--tag">
-            <span>CSS</span>
-          </div>
-
-          <div class="skill--tag">
-            <span>Technical Support</span>
-          </div>
         </div>
       </div>
     </section>
